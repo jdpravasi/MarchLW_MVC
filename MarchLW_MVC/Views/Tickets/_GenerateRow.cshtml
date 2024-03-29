@@ -1,0 +1,37 @@
+﻿@model Rides
+
+<tr class="ticketRow">
+    <td>
+        <input type="text" class="rideID" id="AdultTicketPrice" value="@Model.ID" hidden disabled />
+        @Model.RideName
+        <br />
+
+    </td>
+    <td id="ticketPrice">
+        Adult = <input type="text" class="adultTicketPrice" id="AdultTicketPrice" value="@Model.RidePriceAdult" disabled /> <br>
+        Child = <input type="text" class="childticketPrice" id="ChildTicketPrice" value="@Model.RidePriceChild" disabled /> <br>
+    </td>
+    <td>
+        Adults:
+        <select id="adultDropdown" class="form-select m-1 adultDropdown">
+            <option disabled selected>Select Adults</option>
+            @for (int adult = 1;adult  <= 10; adult++)
+            {
+                <option value="@adult" id="AdultsCount">@adult</option>
+            }
+        </select>
+        Childs:
+        <select id="childDropdown" class="form-select m-1 childDropdown">
+            <option disabled selected>Select Childs</option>
+            @for ( int child = 1; child <= 10; child++)
+            {
+                <option value="@child" id="ChildCount">@child</option>
+            }
+        </select>
+    </td>
+    <td id="totalPrice">
+        ₹<span id="totalPriceValue" class="totalPriceValue">0.00</span>
+    </td>
+</tr>
+
+<script src="~/js/PriceCount.js"> </script>

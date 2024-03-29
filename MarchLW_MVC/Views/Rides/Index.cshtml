@@ -1,0 +1,65 @@
+﻿<div class="row">
+    <div class="col-6">
+        <h1>Rides</h1>
+    </div>
+    <div class="col-6 text-end">
+        <a id="addRide" class="btn btn-primary ">
+            Add Ride
+        </a>
+    </div>
+</div>
+<form id="rideForm" class="rideForm" name="rideForm">
+    <table id="RideTBL" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="text-success fs-4">Ride Name</th>
+                <th class="text-success fs-4">Price For adult</th>
+                <th class="text-success fs-4">Price For Child</th>
+                <th class="text-success fs-4">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="FormBody">
+        </tbody>
+    </table>
+</form>
+
+
+<div class=" modal fade modal" id="rideModal">
+    <div class=" modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-info modal-title" id="rideTitle">Add Ride</h2>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="rideForm">
+                    <div class="form-group" id="rId">
+                        <input type="text" hidden class="form-control" id="ID" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="Name" required maxlength="20" minlength="2" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Price For Adult</label>
+                        <input type="number" class="form-control" id="PriceAdult" required maxlength="3" minlength="2" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>Price For Children</label>
+                        <input type="number" class="form-control" id="PriceChild" required maxlength="3" minlength="2" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="AddUser();" id="AddData">Create</button>
+                <button class="btn btn-primary" onclick="UpdateUser();" style="display:none" id="UpdateData">Update</button>
+
+                <button class="btn btn-danger btn-default" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Rides.js"> </script>
+}

@@ -1,0 +1,30 @@
+﻿@model List<Rides>
+
+@foreach (var ride in Model)
+{
+    <tr class="ridesRow">
+        <td>
+            <input type="text" class="rideID" id="AdultTicketPrice" value="@ride.ID" hidden disabled />
+            @ride.RideName
+            <br />
+        </td>
+        <td>
+            <input type="text" class="rideID" id="AdultTicketPrice" value="@ride.ID" hidden disabled />
+            @ride.RidePriceAdult
+            <br />
+        </td>
+        <td>
+            <input type="text" class="rideID" id="AdultTicketPrice" value="@ride.ID" hidden disabled />
+            @ride.RidePriceChild
+            <br />
+        </td>
+        <td>
+            <a href="#" value="@ride.ID" class="btn btn-success save" onclick="Edit(@ride.ID) ">Update</a> &nbsp
+            <a href="#" value="@ride.ID" class="btn btn-danger discard" onclick="Delete(@ride.ID)">Delete</a>
+        </td>
+    </tr>
+}
+
+@section Scripts {
+    <script src="~/js/Rides.js"> </script>
+}

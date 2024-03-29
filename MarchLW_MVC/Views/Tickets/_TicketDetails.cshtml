@@ -1,0 +1,40 @@
+﻿@model List<MarchLW_MVC.Models.TicketDetails>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="card m-5">
+            <div class="card-header">
+                <h1 class="text-center text-success">Ticket Details</h1>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped ">
+                    <thead>
+                        <tr>
+                            <th class="text-center text-success"> <h4> Ticket ID</h4>   </th>
+                            <th class="text-center text-success"> <h4> Customer Name</h4>   </th>
+                            <th class="text-center text-success"> <h4> Number of Adults</h4></th>
+                            <th class="text-center text-success"> <h4> Number of Children</h4>  </th>
+                            <th class="text-center text-success"> <h4> Total Price</h4> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var ticket in Model)
+                        {
+                            <tr>
+                                <td>@ticket.Ticket.ID</td>
+                                <td>@ticket.Customer.Name</td>
+                                <td>@ticket.NumberOfAdults</td>
+                                <td>@ticket.NumberOfChildren</td>
+                                <td>@ticket.TotalPrice</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
+

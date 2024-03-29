@@ -1,0 +1,57 @@
+﻿<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">Ticket</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+@*             <div class="col-2 text-start">
+                <a href="#" id="addTicket" class="btn btn-success">Add ticket</a>
+            </div> *@
+            <div class="col text-start">
+                  <input type="text" id="searchBox" placeholder="To Get Suggestions - Search..  ||  To get All type 'all' "class="form-control borderd border-success" />
+                  <span id="suggestions" class="suggestions"></span>
+              </div>
+        </div>
+    <form id="TicketForm" method="post" action="#">
+        <table class="table table-bordered table-striped mt-2" id="ticketTableWhole">
+            <thead>
+                <th class="text-success"> <h4>Ticket For</h4>   </th>
+                <th class="text-success"> <h4>Ticket Price</h4> </th>
+                <th class="text-success"> <h4>Persons</h4>      </th>
+                <th class="text-success"> <h4>Total</h4>        </th>
+            </thead>
+            <tbody id="ticktTableBody">
+                <tr class="row">
+                        <input type="text" id="nameInput" placeholder="Enter Name Here" class="form-control borderd border-info col-6 m-2" />
+                </tr>
+                <tr class="row">
+                        <input type="text" id="emailInput" placeholder="Enter Email Here" class="form-control borderd border-info col-6 m-2" />
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-success text-end">
+                        <h5>Grand Total</h5>
+                    </td>
+                    <td id="totalPayable">
+                    </td>
+                </tr>
+                <tr>@* 
+                     <td colspan="4" class="text-danger text-center">
+                         <button id="printButton" class="btn btn-danger">Print</button>
+                     </td> *@
+                    <td colspan="4" class="text-danger text-center">
+                        <a id="printButton" class="btn btn-danger ">
+                          Create & Print
+                        </a>
+                    </td>
+                    </tr>
+            </tfoot>
+        </table>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Tickets.js"> </script>
+}
